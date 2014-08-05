@@ -1,0 +1,26 @@
+<h1> Cadastrar Projeto </h1>
+
+<%= form_for(@project) do |l| %>
+  <div class= 'title'>
+    <div class= 'title-name-lb'>
+      <%= l.label 'Nome do projeto' %>
+    </div>
+    <div class= 'title-name-entry'>
+      <%= l.text_field :name %>
+    </div>
+  </div>
+
+  <div class= 'link-project'>
+    <div class= 'link-project-lb'>
+      <%= l.label 'URL do projeto'%>
+    </div>
+    <div class= 'link-project-url'>
+      <%= l.text_field :url %>
+    </div>
+  </div>
+  
+  <div class= 'button-submit'>
+    <%= l.submit 'Cadastrar Projeto' %>
+  </div>
+
+<% end %>
