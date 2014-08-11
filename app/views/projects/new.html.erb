@@ -1,26 +1,38 @@
-<h1> Cadastrar Projeto </h1>
+<div class= 'header'>
+  <div class= 'title'>
+    <h1> Project View</h1> 
+  </div> 
+
+  <div class= "back-home">
+    <%= link_to 'Lista de Projetos', projects_path %>
+  </div>
+</div>
+
+
 
 <%= form_for(@project) do |l| %>
-  <div class= 'title'>
-    <div class= 'title-name-lb'>
-      <%= l.label 'Nome do projeto' %>
-    </div>
+
+  <div class= 'new-project'>
+    
+    <%= l.label 'Nome do projeto' %>
+    
     <div class= 'title-name-entry'>
       <%= l.text_field :name %>
     </div>
-  </div>
-
-  <div class= 'link-project'>
-    <div class= 'link-project-lb'>
-      <%= l.label 'URL do projeto'%>
-    </div>
-    <div class= 'link-project-url'>
-      <%= l.text_field :url %>
-    </div>
-  </div>
   
-  <div class= 'button-submit'>
-    <%= l.submit 'Cadastrar Projeto' %>
+
+    <div class= 'link-project'>
+      <div class= 'link-project-lb'>
+        <%= l.label 'URL do projeto'%>
+      </div>
+      <div class= 'link-project-url'>
+        <%= l.text_field :url %>
+      </div>
+    </div>
+    
+    <div class= 'button-submit'>
+      <%= l.submit 'Cadastrar Projeto' %>
+    </div>
   </div>
 
 <% end %>
