@@ -1,19 +1,44 @@
-<h1> Listas </h1>
+<div class= "header">
 
+  <div class= "title">
+    <h1> Project View </h1>
+  </div>
+
+  <div class= "new-project">
+    <%= link_to 'Cadastrar projeto', new_project_path %>
+  </div>
+
+</div>
 <% if @projects.count != 0 %>
+
+<div class= "projects">
+
   <% @projects.each do |project| %>
-    <div class= "project-name">
-      <%= project[:name] %>
+
+    <div class= "project">
+
+      <div class= "project-name">
+        <h1><%= project[:name] %></h1>
+      </div>
+
+      <div class= "project-url">
+        <h2>url:<%= project[:url]%></h2>
+      </div>
+
+      <div class= "project-destroy">
+        <%= link_to "Excluir", project, method: :delete, data: {confirm: 'Deseja mesmo excluir?'} %>
+      </div>
+
     </div>
-    <div class= "project-url">
-      <%= project[:url] %>
-    </div>
-    <div class "project-destroy-bt">
-      <%= link_to "Excluir", project, method: :delete, data: {confirm: 'Deseja mesmo excluir?'} %>
-    </div>
+
   <% end %>
+
+</div>
 <% else %>
-  <p> nenhum projeto cadastrado </p>
+
+  <div class= "project">
+    <h1> nenhum projeto cadastrado </h1>
+  </div>
+
 <% end %>
 
-<%= link_to 'Cadastrar projeto', new_project_path %>
