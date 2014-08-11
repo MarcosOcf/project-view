@@ -5,13 +5,14 @@ class CloneWorker
     project = Project.find project_id
     begin
       Git.clone(url, name, path: path)
-      if Dir.exist?(path+name)
-        project.cloned = true
-        project.save(validate: false)
-      end
     rescue
-      false
+      invalidate_clone
     end
+  end
+
+  def invalidate_clone
+    project.can_be_cloned = false
+    project.save(validate: false)
   end
 end
 

@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
 
-  before_action :set_project, only:[:destroy]
+  before_action :set_project, only:[:destroy, :show]
   @@PATH = "#{Dir.home}/project_view"
 
   def index
@@ -13,22 +13,23 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    @project.name = project_name
     if @project.save
       clone_repository
-      redirect_to :projects
+      redirect_to @project
     else
       render :new
     end
   end
 
   def show
-    # if @project.cloned?
-    #   # Página!
-    # elsif !@project.cloned? and @project.created_at < (@project.created_at + 15.minutes)
-    #   # Aguenta ai um pouco
-    # else
-    #   # deu pau, tenta clonar de novo
-    # end
+    if @project.cloned?
+      render 'projects/show'
+    elsif !@project.cloned? and @project.can_be_cloned
+      render 'projects/show-wait'
+    else
+      render 'projects/show-error'
+    end
   end
 
   def destroy
@@ -44,7 +45,8 @@ class ProjectsController < ApplicationController
   end
 
   def clone_repository
-    CloneWorker.perform_async "#{@project[:url]}", "#{project_name}", @@PATH, @project.id.to_s
+    CloneWorker.perform_async "#{@project[:url]}", "#{@project.name}", @@PATH, @project.id.to_s
+    ValidationWorker.perform_async @project.id.to_s,  @@PATH
   end
 
   def project_name
