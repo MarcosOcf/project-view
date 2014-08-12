@@ -68,6 +68,9 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    markdown-rails (0.2.1)
+      rails
+      rdiscount (>= 1.6.8, < 2.0)
     mime-types (1.25.1)
     minitest (5.4.0)
     mongoid (4.0.0)
@@ -107,6 +110,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.3.2)
+    rdiscount (1.6.8)
     rdoc (4.1.1)
       json (~> 1.4)
     redis (3.1.0)
@@ -134,10 +138,10 @@ GEM
       sass (~> 3.2.0)
       sprockets (~> 2.8, <= 2.11.0)
       sprockets-rails (~> 2.0)
-    sdoc (0.4.0)
-      json (~> 1.8)
-      rdoc (~> 4.0, < 5.0)
-    sidekiq (3.2.1)
+    sdoc (0.4.1)
+      json (~> 1.7, >= 1.7.7)
+      rdoc (~> 4.0)
+    sidekiq (3.2.2)
       celluloid (>= 0.15.2)
       connection_pool (>= 2.0.0)
       json
@@ -162,7 +166,7 @@ GEM
       polyglot (>= 0.3.1)
     turbolinks (2.2.2)
       coffee-rails
-    tzinfo (1.2.1)
+    tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.5.3)
       execjs (>= 0.3.0)
@@ -180,6 +184,7 @@ DEPENDENCIES
   git
   jbuilder (~> 2.0)
   jquery-rails
+  markdown-rails
   mongoid (~> 4.0.0)
   mongoid_rails_migrations
   rails (= 4.1.1)

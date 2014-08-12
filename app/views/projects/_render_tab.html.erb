@@ -1,0 +1,6 @@
+<% if @project.tabs.count != 0 %>
+  <% @project.tabs.each do |tab| %>
+    <%= tab.path %>
+    <%= link_to "excluir", destroy_tab_url(@project.id, tab.id), method: :delete, data: {confirm: 'Deseja mesmo excluir?'} %>
+  <% end %>
+<% end %>

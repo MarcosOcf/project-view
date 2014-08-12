@@ -1,0 +1,19 @@
+<div class= 'header'>
+  <div class= 'title'>
+    <h1> Project View</h1> 
+  </div> 
+
+  <div class= "back-home">
+    <%= link_to 'Lista de Projetos', projects_path %>
+  </div>
+</div>
+
+
+<div class= 'tab'>
+  <%= form_for(@tab) do |t| %>
+    <%= t.label "Digite o path do arquivo #{@project.name}/" %>
+    <%= t.text_field :path %>
+    <%= t.submit 'Cadastrar path' %>
+  <% end %>
+
+</div>
