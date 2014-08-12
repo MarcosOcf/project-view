@@ -67,7 +67,6 @@ body{
   border-bottom-width: 2px;
   border-bottom-color: #999999;
 
-  
   margin: 0 auto;
   width: 1024px;
   background: #FFFFFF;
@@ -79,8 +78,6 @@ body{
     height: 50px;
     margin-left: 30px;
     
-    
-
     h1{
       font-family: Arial;
       font-size: 20px;
@@ -123,10 +120,28 @@ body{
       color: white;
     }
   }
-  
-
 }
 
+.project-not{
+  height: 100px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #999999;
+  margin: 0 auto;
+  width: 1024px;
+  background: #FFFFFF;
+  margin-bottom: 30px;
+  margin-top: 50px;
+
+  h1{
+    height: 50px;
+    width: 350px;
+    font-size: 30px;
+    padding-top: 30px;
+    margin-left: 50px;
+    
+  }
+}
 
 
 

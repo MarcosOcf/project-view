@@ -3,14 +3,16 @@ class CloneWorker
 
   def perform url, name, path, project_id
     project = Project.find project_id
+    
     begin
       Git.clone(url, name, path: path)
-    rescue
-      invalidate_clone
+    rescue => e
+      Rails.logger.error e.message
+      invalidate project
     end
   end
-
-  def invalidate_clone
+  
+  def invalidate project
     project.can_be_cloned = false
     project.save(validate: false)
   end

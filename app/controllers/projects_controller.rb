@@ -23,9 +23,9 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    if @project.cloned?
+    if @project.cloned and @project.can_be_cloned
       render 'projects/show'
-    elsif !@project.cloned? and @project.can_be_cloned
+    elsif !@project.cloned and @project.can_be_cloned
       render 'projects/show-wait'
     else
       render 'projects/show-error'

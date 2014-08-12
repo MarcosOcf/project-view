@@ -18,7 +18,7 @@
     <div class= "project">
 
       <div class= "project-name">
-        <h1><%= project[:name] %></h1>
+        <h1><%= link_to "#{project.name}", project %></h1>
       </div>
 
       <div class= "project-url">
@@ -36,8 +36,8 @@
 </div>
 <% else %>
 
-  <div class= "project">
-    <h1> nenhum projeto cadastrado </h1>
+  <div class= "project-not">
+    <h1> Nenhum projeto cadastrado </h1>
   </div>
 
 <% end %>
