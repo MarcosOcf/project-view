@@ -38,6 +38,9 @@ class ProjectsController < ApplicationController
     redirect_to projects_url
   end
 
+  def pull
+  end
+
   private
 
   def update_project

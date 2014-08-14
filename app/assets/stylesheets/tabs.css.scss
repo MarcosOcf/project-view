@@ -5,7 +5,9 @@
   border-bottom: 1px solid #333;
 
   a {
-    border-radius: 4px;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+
     padding: 10px;
     text-decoration: none;
     background-color: #333;

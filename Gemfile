@@ -19,7 +19,7 @@ gem 'git'
 gem 'mongoid_rails_migrations'
 gem 'redis', '~> 3.1.0'
 gem 'kramdown'
-
+gem 'whenever', :require => false
 
 group :development, :test do
   gem "rspec-rails"
