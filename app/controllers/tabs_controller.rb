@@ -14,7 +14,7 @@ class TabsController < ApplicationController
   def create
     if tab_exists
       @tab = @project.tabs.create(tab_params)
-      
+      create_html
       redirect_to @project
     else
       redirect_to new_tab_path
@@ -31,16 +31,22 @@ class TabsController < ApplicationController
 
   private
 
+  def create_html
+    @tab.html = File.open(Dir.home + '/project_view/' + @project.name + '/' + @tab.path, 'r').read
+    @tab.save
+  end
+
+
   def tab_exists
     File.exists?(Dir.home + '/project_view/' + @project.name + '/' + tab_params[:path].to_s)
   end
 
   def set_project
-    @project = Project.find(params[:id])
+    @project = Project.find(params[:project_id])
   end
 
   def set_tab
-    @tab = Tab.find params[:id_tab]
+    @tab = Tab.find params[:id]
   end
 
   def tab_params

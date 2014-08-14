@@ -18,7 +18,7 @@ gem 'sidekiq'
 gem 'git'
 gem 'mongoid_rails_migrations'
 gem 'redis', '~> 3.1.0'
-gem 'markdown-rails'
+gem 'kramdown'
 
 
 group :development, :test do

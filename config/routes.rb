@@ -9,13 +9,13 @@ Rails.application.routes.draw do
 
   #-------------- tab ----------------
 
-  scope "projects/:id" do
+  scope "projects/:project_id" do
     get 'tabs', to: 'tabs#index', as: 'tabs'
     post 'tabs', to: 'tabs#create', as: 'new_tab_to_project'
 
     get 'tabs/new', to: 'tabs#new', as: 'new_tab'
-    get 'tabs/:id_tab', to: 'tabs#show', as: 'tab'
-    delete 'tabs/:id_tab', to: 'tabs#destroy', as: 'destroy_tab'
+    get 'tabs/:id', to: 'tabs#show', as: 'tab'
+    delete 'tabs/:id', to: 'tabs#destroy', as: 'destroy_tab'
   end
 
 end
