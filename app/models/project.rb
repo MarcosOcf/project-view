@@ -5,7 +5,8 @@ class Project
   field :name, type: String
   field :cloned, type: Boolean, default: false
   field :can_be_cloned, type: Boolean, default: true
-  validates_presence_of :name, :url
+  
+  validates_presence_of :name, :url, :message => "Algum campo está vazio"
 
   has_many :tabs
 end

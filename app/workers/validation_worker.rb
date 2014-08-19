@@ -8,7 +8,7 @@ class ValidationWorker
     while @project.can_be_cloned
      
       if folder_exists path, @project.name
-        authenticate      
+        authenticate
         break
      
       else

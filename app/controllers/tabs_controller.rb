@@ -12,10 +12,17 @@ class TabsController < ApplicationController
   end
 
   def create
+    @tab = Tab.new tab_params
     if tab_exists
-      @tab = @project.tabs.create(tab_params)
-      create_html
-      redirect_to @project
+      begin
+        @tab = @project.tabs.create(tab_params)
+        create_html
+        redirect_to @project
+      rescue => e
+        Rails.logger.error "tab valido: #{@tab.valid?}"
+        Rails.logger.error @tab.errors
+        redirect_to new_tab_path
+      end
     else
       redirect_to new_tab_path
     end

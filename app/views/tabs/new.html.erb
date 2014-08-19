@@ -4,7 +4,7 @@
   </div> 
 
   <div class= "back-home">
-    <%= link_to 'Lista de Projetos', projects_path %>
+    <%= link_to 'Voltar', projects_path %>
   </div>
 </div>
 
@@ -15,4 +15,8 @@
     <%= t.text_field :path %>
     <%= t.submit 'Cadastrar path' %>
   <% end %>
+
+  <div class= 'tab-error'>
+    <%= @tab.errors.full_messages.first if @tab.errors.any? %>
+  </div>
 </div>

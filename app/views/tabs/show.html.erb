@@ -1,7 +1,11 @@
-<%= render partial: 'projects/show', locals:{project: @project} %>
+<div class= "wrapper">
+  <%= render partial: 'projects/show', locals:{project: @project} %>
 
-<%= link_to "excluir", destroy_tab_url(@project.id, @tab.id), method: :delete, data: {confirm: 'Deseja mesmo excluir?'} %>
+  <div class= "destroy-tab">
+    <%= link_to "X", destroy_tab_url(@project.id, @tab.id), method: :delete, data: {confirm: 'Deseja mesmo excluir?'} %>
+  </div>
 
-<%= button_tag 'Atualizar',  :controller => :projects, action: :pull, id: :project_id %>
-
-<%= kramdown(@tab.html).html_safe %>
+  <div class= "kramdown-render">
+    <%= kramdown(@tab.html).html_safe %>
+  </div>
+</div>

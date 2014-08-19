@@ -18,6 +18,8 @@ class ProjectsController < ApplicationController
       clone_repository
       redirect_to @project
     else
+      Rails.logger.error "projeto valido: #{@project.valid?}"
+      Rails.logger.error @project.errors
       render :new
     end
   end

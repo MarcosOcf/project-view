@@ -1,28 +1,42 @@
-<div class= "header">
+<div class = "wrapper">
+  <div class= "header">
 
-  <div class= "title">
-    <h1> Project View </h1>
+    <div class= "title">
+      <h1> Taxonomista </h1>
+    </div>
+
+    <div class= "back-button">
+      <%= link_to 'Voltar', projects_path %>
+    </div>
+
   </div>
 
-  <div class= "new-project">
-    <%= link_to 'Lista de projetos', projects_path %>
+  <div class= "project-info">
+    
+    <div class= "project-box">    
+      <h2><%= @project.name %></h2>
+      <h3><%= @project.url %></h3>
+    </div>
+
+    <div class= "project-destroy">
+      <%= link_to "- excluir projeto", project, method: :delete, data: {confirm: 'Deseja mesmo excluir?'} %>
+    </div>
+
+    <div class= "atualizar">
+      <%= button_tag 'atualizar',  :controller => :projects, action: :pull%>
+    </div>
+
+    <div class= "new-tab">
+      <%= link_to 'Nova aba', new_tab_path(@project) %>
+    </div>
+
   </div>
 
-</div>
 
 
-<h1> projeto clonado com sucesso </h1>
-
-<h2><%= @project.name %></h2>
-
-<h3><%= @project.url %></h3>
-
-<%= link_to '+ Tab', new_tab_path(@project) %>
-
-
-
-<div class="tab-tabs">
-  <% @project.tabs.each do |tab| %>
-    <%= link_to tab.path, tab_path(project_id: @project.id.to_s, id: tab.id) %>
-  <% end %>
+  <div class="tab-tabs">
+    <% @project.tabs.each do |tab| %>
+      <%= link_to tab.path, tab_path(project_id: @project.id.to_s, id: tab.id) %>
+    <% end %>
+  </div>
 </div>

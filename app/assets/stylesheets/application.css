@@ -12,6 +12,7 @@
  *
  *= require reset
  *= require github_markdown_flavor
+ *= require header
  *= require projects
  *= require cadastro
  *= require show
