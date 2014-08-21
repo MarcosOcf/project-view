@@ -1,8 +1,8 @@
-<div class = "wrapper">
+
   <div class= "header">
 
     <div class= "title">
-      <h1> Taxonomista </h1>
+      <h1><%= link_to 'Taxonomista', projects_path %></h1>
     </div>
 
     <div class= "back-button">
@@ -39,4 +39,3 @@
       <%= link_to tab.path, tab_path(project_id: @project.id.to_s, id: tab.id) %>
     <% end %>
   </div>
-</div>

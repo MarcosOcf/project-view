@@ -1,12 +1,11 @@
-.new-project{
-  margin: 100px auto;
+.project-new{
+  margin: 0 auto;
   width: 1024px;
   height: 500px;
   
-
   label{
     margin-top: 20px;
-    font-size: 30px;
+    font-size: 20px;
 
   }
   .title-name-entry{
@@ -41,29 +40,3 @@ input{
 
 }
 
-.back-home{
-  width: 190px;
-  height: 30px;
-  float: right;
-  margin-right: 150px;
-  margin-top: -30px;
-  background: #E6E6E6;
-  border-radius: 10px;
-
-  a{
-    color: #353535;
-    display: inline-block;
-    padding-top: 7px;
-    padding-left: 25px;
-    padding-bottom: 7px;
-    padding-right: 28px;
-    font-family: verdana;
-    text-decoration: none;
-  }
-  
-  
-}
-
-.back-home:hover{
-    background: white;
-  }

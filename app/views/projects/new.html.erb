@@ -1,13 +1,17 @@
 <div class= "wrapper">
   <div class= 'header'>
     <div class= 'title'>
-      <h1>Taxonomista</h1> 
+      <h1><%= link_to 'Taxonomista', projects_path %></h1> 
     </div> 
+
+    <div class= "back-button">
+      <%= link_to 'Cancelar', projects_path %>
+    </div>
   </div>
 
   <%= form_for(@project) do |l| %>
 
-    <div class= 'new-project'>
+    <div class= 'project-new'>
       
       <%= l.label 'Nome do projeto' %>
       
@@ -30,10 +34,6 @@
     </div>
 
   <% end %>
-
-  <div class= "back-home">
-      <%= link_to 'Cancelar', projects_path %>
-  </div>
 
   <div class= 'project-error'>
     <%= @project.errors.full_messages.first if @project.errors.any? %>

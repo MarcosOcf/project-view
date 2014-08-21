@@ -1,7 +1,7 @@
 <div class= "wrapper">
   <div class= "header">
     <div class= "title">
-      <h1> Taxonomista </h1>
+      <h1><%= link_to 'Taxonomista', projects_path %></h1>
     </div>
   </div>
 
@@ -25,10 +25,6 @@
             <p><%=project[:url]%></p>
           </div>
 
-        </div>
-
-        <div class= "project-destroy">
-          <%# link_to "Excluir", project, method: :delete, data: {confirm: 'Deseja mesmo excluir?'} %>
         </div>
 
       <% end %>

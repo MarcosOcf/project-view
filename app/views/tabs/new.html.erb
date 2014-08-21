@@ -1,10 +1,10 @@
 <div class= 'header'>
   <div class= 'title'>
-    <h1> Project View</h1> 
+    <h1><%= link_to 'Taxonomista', projects_path %></h1> 
   </div> 
 
   <div class= "back-home">
-    <%= link_to 'Voltar', projects_path %>
+    <%= link_to 'Voltar', project_path(@project) %>
   </div>
 </div>
 
