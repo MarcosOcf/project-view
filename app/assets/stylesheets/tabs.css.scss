@@ -2,20 +2,35 @@
   width: 100%;
   margin-top: 20px;
   padding-bottom: 10px;
+  padding-top: 30px;
 
   a {
-    border-radius: 5px;
+    border-radius: 2px 2px 0 0;
+    border-width: 1px;
+    border-color: #A7B2BD;
+    border-style: solid;
     padding: 10px;
     text-decoration: none;
-    background-color: #333;
-    color: white;
+    background-color: #FBF6ED;
+    color: #244F72;
+    margin-right: 6px;
 
     &:hover {
-      background-color: #666;
+      border-width: 3px;
+      border-color: #244F72;
+      margin-right: 4px;
+      padding-left: 8px;
     }
 
-    &:checked{
-      border: 2px solid #005A5B;
+    &:focus{
+      border-width: 3px;
+      border-color: red;
+      margin-right: 4px;
+      padding-left: 8px;
+    }
+
+    &.checked {
+      background-color: #cdcdcd;
     }
   }
 }
@@ -28,7 +43,7 @@
   border-style: solid;
   border-color: #999999;
   border-radius: 10px;
-  background: red;
+  background: #244F72;
 
   a{
     text-decoration: none;
@@ -41,8 +56,10 @@
 }
 
 .kramdown-render{
-  margin: 0 auto;
+  margin: -3px auto 0 auto;
   width: 1000px;
   padding-top: 30px;
- 
+  padding: 10px;
+  border: 1px solid #cdcdcd;
+  border-radius: 0 0 3px 3px;
 }

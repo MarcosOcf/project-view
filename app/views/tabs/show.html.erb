@@ -1,6 +1,13 @@
-<div class= "wrapper">
-  <%= render partial: 'projects/show', locals:{project: @project} %>
+<%= render partial: 'tabs/header' %>
+<%= render partial: 'tabs/project_info', locals:{project: @project} %>
 
+<div class="tab-tabs">
+  <% @project.tabs.each do |tab| %>
+    <%= link_to tab.path, tab_path(project_id: @project.id.to_s, id: tab.id), class: tab_css_class(tab) %>
+  <% end %>
+</div>
+
+<% if @tab %>
   <div class= "destroy-tab">
     <%= link_to "X", destroy_tab_url(@project.id, @tab.id), method: :delete, data: {confirm: 'Deseja mesmo excluir?'} %>
   </div>
@@ -8,4 +15,4 @@
   <div class= "kramdown-render">
     <%= kramdown(@tab.html).html_safe %>
   </div>
-</div>
+<% end %>

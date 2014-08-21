@@ -1,6 +1,6 @@
 class Tab
   include Mongoid::Document
-
+  field :name, type: String
   field :path, type: String
   field :html, type: String
   belongs_to :project

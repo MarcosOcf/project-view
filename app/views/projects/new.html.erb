@@ -1,41 +1,39 @@
-<div class= "wrapper">
-  <div class= 'header'>
-    <div class= 'title'>
-      <h1><%= link_to 'Taxonomista', projects_path %></h1> 
-    </div> 
+<div class= 'header'>
+  <div class= 'title'>
+    <h1><%= link_to 'Taxonomista', projects_path %></h1> 
+  </div> 
 
-    <div class= "back-button">
-      <%= link_to 'Cancelar', projects_path %>
-    </div>
+  <div class= "back-button">
+    <%= link_to 'Cancelar', projects_path %>
   </div>
+</div>
 
-  <%= form_for(@project) do |l| %>
+<%= form_for(@project) do |l| %>
 
-    <div class= 'project-new'>
-      
-      <%= l.label 'Nome do projeto' %>
-      
-      <div class= 'title-name-entry'>
-        <%= l.text_field :name %>
-      </div>
+  <div class= 'project-new'>
     
-      <div class= 'link-project'>
-        <div class= 'link-project-lb'>
-          <%= l.label 'URL do projeto'%>
-        </div>
-        <div class= 'link-project-url'>
-          <%= l.text_field :url %>
-        </div>
+    <%= l.label 'Nome do projeto' %>
+    
+    <div class= 'title-name-entry'>
+      <%= l.text_field :name %>
+    </div>
+  
+    <div class= 'link-project'>
+      <div class= 'link-project-lb'>
+        <%= l.label 'URL do projeto'%>
       </div>
-      
-      <div class= 'button-submit'>
-        <%= l.submit 'Cadastrar Projeto' %>
+      <div class= 'link-project-url'>
+        <%= l.text_field :url %>
       </div>
     </div>
-
-  <% end %>
-
-  <div class= 'project-error'>
-    <%= @project.errors.full_messages.first if @project.errors.any? %>
+    
+    <div class= 'button-submit'>
+      <%= l.submit 'Cadastrar Projeto' %>
+    </div>
   </div>
+
+<% end %>
+
+<div class= 'project-error'>
+  <%= @project.errors.full_messages.first if @project.errors.any? %>
 </div>

@@ -9,4 +9,10 @@ class Project
   validates_presence_of :name, :url, :message => "Algum campo está vazio"
 
   has_many :tabs
+
+  before_destroy :delete_directory
+
+  private
+  def delete_directory
+  end
 end

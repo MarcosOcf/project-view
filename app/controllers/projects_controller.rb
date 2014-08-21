@@ -18,15 +18,15 @@ class ProjectsController < ApplicationController
       clone_repository
       redirect_to @project
     else
-      Rails.logger.error "projeto valido: #{@project.valid?}"
-      Rails.logger.error @project.errors
+      error
       render :new
     end
   end
 
   def show
     if @project.cloned and @project.can_be_cloned
-      render 'projects/show'
+      @tab = @project.tabs.first
+      render 'tabs/show'
     elsif !@project.cloned and @project.can_be_cloned
       render 'projects/show-wait'
     else
@@ -40,10 +40,16 @@ class ProjectsController < ApplicationController
     redirect_to projects_url
   end
 
-  def pull
-  end
-
   private
+  
+  def pull
+    #call pull worker
+  end
+  
+  def error
+    Rails.logger.error "projeto valido: #{@project.valid?}"
+    Rails.logger.error @project.errors
+  end
 
   def update_project
     @project.save
@@ -66,10 +72,3 @@ class ProjectsController < ApplicationController
     params.require(:project).permit(:name,:url)
   end
 end
-
-
-
-
-
-
-

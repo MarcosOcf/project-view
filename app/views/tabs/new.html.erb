@@ -3,17 +3,25 @@
     <h1><%= link_to 'Taxonomista', projects_path %></h1> 
   </div> 
 
-  <div class= "back-home">
-    <%= link_to 'Voltar', project_path(@project) %>
-  </div>
 </div>
 
-
 <div class= 'tab'>
+  <h1>Novo Projeto</h1>
   <%= form_for(@tab) do |t| %>
-    <%= t.label "Digite o path do arquivo #{@project.name}/" %>
-    <%= t.text_field :path %>
-    <%= t.submit 'Cadastrar path' %>
+    <div class= "tab-name">
+      <%= t.label "Digite um nome para sua aba"%>
+      <%= t.text_field :name %>
+    </div>
+    
+    <div class= 'tab-path'>
+      <%= t.label "Digite o path do arquivo #{@project.name}/" %>
+      <%= t.text_field :path %>
+      <%= t.submit 'Cadastrar path' %>
+    </div>
+    
+    <div class= "back-home">
+      <%= link_to 'Voltar', project_path(@project) %>
+    </div>
   <% end %>
 
   <div class= 'tab-error'>

@@ -1,5 +1,5 @@
 .back-button{
-  widtƒ: 70px;
+  width: 80px;
   height: 30px;
   background: #244F72;
   border-radius:2px;
@@ -10,73 +10,52 @@
     color: #FFFFF5;
     display: inline-block;
     padding-top: 2px;
-    padding-left: 11px;
+    padding-left: 17px;
     padding-bottom: 3px;
-    padding-right: 10px;
+    padding-right: 18px;
     font-family: verdana;
     text-decoration: none;
   }
 }
-.project-info{
-  
-  margin-top: 100px;
+
+.project-info {
+  margin-top: 40px;
+
+  &:after {
+    content: " ";
+    clear: both;
+    display: table;
+  }
+
   h2 {
     font-size: 30px;
-    padding-left: 30px;
+    color: #001C3E;
+    border-bottom: none;
+    margin: 0;
   }
   
-  h3{
-    padding-left: 60px;
+  h3 {
+    color: #014D71;
+    margin: 0;
+    font-size: 14px;
   }
 
-  .atualizar{
-
-    button{
-      width: 100px;
-      height: 40px;
-      background: #244F72;
-      border-radius: 5px;
-      border-style: none;
-      font-size: 16px;
-      color: #FFFFFF;
-
-    }
-    
-    float: right;
-    margin-top: -105px;
-    margin-right: 165px;
-    position: relative;
-    z-index: 10;
-  }
-  .project-destroy{
-
-    width: 160px;
-    height: 40px;
-    margin-top: -105px;
+  .button {
+    padding: 10px 20px;
     background: #244F72;
     border-radius: 5px;
-    float: right;
-    position: relative;
-    z-index: 10;
-
-    a{
-      font-size: 16px;
-      color: #FFFFF5;
-      display: inline-block;
-      padding-top: 5px;
-      padding-left: 12px;
-      padding-bottom: 10px;
-      padding-right: 16px;
-      font-family: verdana;
-      text-decoration: none;
-    }
+    border-style: none;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
   }
 
+  .project-box {
+    float: left;
+  }
+
+  .settings {
+    float: right;
+  }
 }
-
-
-
-
-
-
-

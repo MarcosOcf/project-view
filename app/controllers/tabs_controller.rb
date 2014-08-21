@@ -43,7 +43,6 @@ class TabsController < ApplicationController
     @tab.save
   end
 
-
   def tab_exists
     File.exists?(Dir.home + '/project_view/' + @project.name + '/' + tab_params[:path].to_s)
   end
@@ -57,17 +56,8 @@ class TabsController < ApplicationController
   end
 
   def tab_params
-    params.require(:tab).permit(:path)
+    params.require(:tab).permit(:name,:path)
   end
 end
-
-
-
-
-
-
-
-
-
 
 

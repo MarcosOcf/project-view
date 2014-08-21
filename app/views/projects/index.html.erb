@@ -1,42 +1,39 @@
-<div class= "wrapper">
-  <div class= "header">
-    <div class= "title">
-      <h1><%= link_to 'Taxonomista', projects_path %></h1>
-    </div>
+<div class= "header">
+  <div class= "title">
+    <h1><%= link_to 'Taxonomista', projects_path %></h1>
   </div>
+</div>
 
-  <div class= "new-project">
-    <%= link_to "+ adicionar projeto", new_project_path %>
-  </div>
+<div class= "new-project">
+  <%= link_to "+ adicionar projeto", new_project_path %>
+</div>
 
-  <% if @projects.count != 0 %>
+<% if @projects.count != 0 %>
 
-    <div class= "projects">
+  <div class= "projects">
 
-      <% @projects.each do |project| %>
+    <% @projects.each do |project| %>
 
-        <div class= "project">
+      <div class= "project">
 
-          <div class= "project-name">
-            <%= link_to "#{project.name}", project %>
-          </div>
-
-          <div class= "project-url">
-            <p><%=project[:url]%></p>
-          </div>
-
+        <div class= "project-name">
+          <%= link_to "#{project.name}", project %>
         </div>
 
-      <% end %>
+        <div class= "project-url">
+          <p><%=project[:url]%></p>
+        </div>
 
-    </div>
-
-  <% else %>
-
-      <div class= "no-project">
-        <h1> Nenhum projeto cadastrado </h1>
       </div>
 
-  <% end %>
+    <% end %>
 
-</div>
+  </div>
+
+<% else %>
+
+    <div class= "no-project">
+      <h1> Nenhum projeto cadastrado </h1>
+    </div>
+
+<% end %>
