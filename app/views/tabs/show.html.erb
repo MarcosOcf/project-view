@@ -5,7 +5,7 @@
   <%= link_to '+', new_tab_path(@project), id: 'nova-aba'%>
 
   <% @project.tabs.each do |tab| %>
-    <%= link_to tab.path, tab_path(project_name: @project.name, id: tab.id), class: tab_css_class(tab) %>
+    <%= link_to tab.path, tab_path(project_id: @project.id.to_s, id: tab.id), class: tab_css_class(tab) %>
   <% end %>
 </div>
 
