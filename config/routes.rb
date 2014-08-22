@@ -17,4 +17,8 @@ Rails.application.routes.draw do
     delete 'tabs/:id', to: 'tabs#destroy', as: 'destroy_tab'
   end
 
+  #------------- math ----------------
+
+  get ':name', to: 'projects#show'
+  #match ':projects/:project.name/tabs.path', to: 'tabs#show', as: 'tab'
 end

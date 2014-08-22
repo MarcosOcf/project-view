@@ -1,23 +1,7 @@
-<div class= "header">
-
-  <div class= "title">
-    <h1><%= link_to 'Taxonomista', projects_path %></h1>
-  </div>
-
-  <div class= "new-project">
-    <%= link_to 'Voltar', projects_path %>
-  </div>
-
-</div>
+<%= render partial: 'tabs/header' %>
 
 <div class= "project-box">
-  <h1> Projeto impossível de ser clonado, por favor, delete e tente novamente </h1>
-  <div class= "project-info">
-    <h3><%= @project.url %></h3>
-    <h2><%= @project.name %></h2>
-  </div>
-  <div class= "delete-project">
-    <%= link_to "Excluir", @project, method: :delete, data: {confirm: 'Deseja mesmo excluir?'} %>
-  </div>
+  <h1> Projeto impossível de ser clonado.</h1>
+  <%= render partial: 'tabs/project_info', locals:{project: @project} %>
 </div>
 

@@ -13,19 +13,42 @@
   <div class= "projects">
 
     <% @projects.each do |project| %>
+     
+        <div class= "project">
+          <div class= "project-name">
+            <%= link_to "#{project.name}", project %>
+          </div>
 
-      <div class= "project">
+          <div class= 'project-status'>
 
-        <div class= "project-name">
-          <%= link_to "#{project.name}", project %>
+            <% if project.cloned %>
+              
+              <div class= "project-sucess">
+          
+              </div>
+
+            <% elsif !project.cloned and project.can_be_cloned %>
+
+              <div class= "project-waiting">
+                
+              </div>
+
+            <% else %>
+
+              <div class= "project-error">
+                
+              </div>
+
+            <% end %>   
+          </div>
+          
+
+          <div class= "project-url">
+            <%= link_to project[:url], project[:url]%></p>
+          </div>
+
+
         </div>
-
-        <div class= "project-url">
-          <p><%=project[:url]%></p>
-        </div>
-
-      </div>
-
     <% end %>
 
   </div>

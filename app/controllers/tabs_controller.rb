@@ -13,6 +13,7 @@ class TabsController < ApplicationController
 
   def create
     @tab = Tab.new tab_params
+    verify_params tab_params
     if tab_exists
       begin
         @tab = @project.tabs.create(tab_params)
@@ -37,6 +38,10 @@ class TabsController < ApplicationController
   end
 
   private
+
+  def verify_params
+    
+  end
 
   def create_html
     @tab.html = File.open(Dir.home + '/project_view/' + @project.name + '/' + @tab.path, 'r').read

@@ -11,10 +11,11 @@
  * file per style scope.
  *
  *= require reset
+ *= require github_markdown_flavor
  *= require header
  *= require projects
  *= require cadastro
  *= require show
  *= require tabs
- *= require github_markdown_flavor
+ *= require errors
  */

@@ -5,26 +5,40 @@
 
 </div>
 
-<div class= 'tab'>
-  <h1>Novo Projeto</h1>
+<div class= 'cadastro'>
+  <div class= 'cadastro-title'>
+    <h1>Nova aba</h1>
+  </div>
+  
   <%= form_for(@tab) do |t| %>
-    <div class= "tab-name">
-      <%= t.label "Digite um nome para sua aba"%>
-      <%= t.text_field :name %>
+
+    <div class= "cadastro-field1">
+      <div class= "cadastro1-label">
+        <%= t.label "Nome da Aba"%>
+      </div>
+      <div class= "cadastro1-input">
+        <%= t.text_field :name %>
+      </div>
     </div>
     
-    <div class= 'tab-path'>
-      <%= t.label "Digite o path do arquivo #{@project.name}/" %>
-      <%= t.text_field :path %>
+    <div class= 'cadastro-field2'>
+      <div class= "cadastro2-label">
+        <%= t.label "Path do arquivo" %>
+      </div>
+      <div class= "cadastro2-input">
+        <h3><%= @project.name %>/</h3><%= t.text_field :path %>
+      </div>
+    </div>
+
+    <div class= "cadastro-buttons">
+      <div class= 'back-button'>
+        <%= link_to 'Voltar', project_path(@project) %>
+      </div>
       <%= t.submit 'Cadastrar path' %>
-    </div>
-    
-    <div class= "back-home">
-      <%= link_to 'Voltar', project_path(@project) %>
     </div>
   <% end %>
 
-  <div class= 'tab-error'>
+  <div class= 'cadastro-error'>
     <%= @tab.errors.full_messages.first if @tab.errors.any? %>
   </div>
 </div>

@@ -1,42 +1,132 @@
-.project-new{
-  margin: 0 auto;
+.cadastro {
+  z-index: 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+  padding-bottom: 40px;
+  .cadastro-title {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 70px;
+    background: #244F72;
+
+    h1 {
+      color: white;
+      margin-left: 40px;
+      padding-top: 15px;
+    }
+  }
+}
+
+
+.cadastro-field1 {
   width: 1024px;
-  height: 500px;
-  
-  label{
-    margin-top: 20px;
-    font-size: 20px;
-
-  }
-  .title-name-entry{
-    width: 1024px;
-    height: 200px;
-  }
-}
-
-.button-submit{
-  input{
-    margin-left: 312px;
-    margin-top: 30px;
-    width: 400px;
-    height: 80px;
-    background: #E6E6E6;
-    font-size: 30px;
-    border-radius: 20px;
-  }
-
-  input:hover{
-    background: white;
-  }
-}
-
-input{
-  margin-top: 10px;
-  width: 400px;
   height: 100px;
-  background-image: linear-gradient(to top, white, #E6E6E6);
-  border-radius: 20px;
-  font-size: 50px;
+  margin-top: 50px;
+  label {
+    color: #244F72;
+    font-size: 22px;
+    margin-left: 40px;
+  }
+
+  input {
+    margin-top: 8px;
+    height: 40px;
+    margin-left: 130px;
+    width: 800px;
+    font-size: 20px;
+    color: #244F72;
+  }
+}
+
+.cadastro-field2 {
+  width: 1024px;
+  height: 180px;
+
+  label{
+    color: #244F72;
+    font-size: 22px;
+    margin-left: 40px;
+  }
+
+  input {
+    height: 40px;
+    margin-left: 130px;
+    margin-top: -45px;
+    position: absolute;
+    width: 800px;
+    font-size: 20px;
+    color: #244F72;
+  }
+
+  h3 {
+    margin-left: 35px;
+    color: #244F72;
+    font-size: 15px;
+  }
+}
+
+.cadastro-buttons {
+  float: right;
+  width: 500px;
+  height: 40px;
+ 
+  clear: both;
+  display: table;
+  
+  input {
+    width: 200px;
+    height: 40px;
+    background: #244F72;
+    margin-left: 210px;
+    margin-top: -40px;
+    position: absolute;
+    border: none;
+    border-radius: 2px;
+    font-size: 15px;
+    color: #FFFFFF;
+    cursor: pointer;
+  }
+
+  .back-button {
+    width: 200px;
+    height: 40px;
+    background: #244F72;
+    margin-top: -30px;
+
+    a {
+      display: inline-block;
+      line-height: 40px;
+      padding-left: 75px;
+      padding-right: 78px;
+    }
+  }
+}
+
+.cadastro-error {
+  background:  #A2261C;
+  width: 300px;
+  box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+  position: absolute;
+  margin-left: 340px;
+  margin-top: -50px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+
+  h6 {
+    display: inline-block;
+    margin-left: 40px;
+    color: #FFF;
+  }
 
 }
+
+
+
+
+
+
+
+
+
+
 

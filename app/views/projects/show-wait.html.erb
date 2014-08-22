@@ -1,19 +1,6 @@
-<div class= "header">
-
-  <div class= "title">
-    <h1><%= link_to 'Taxonomista', projects_path %></h1>
-  </div>
-
-  <div class= "new-project">
-    <%= link_to 'Voltar', projects_path %>
-  </div>
-
-</div>
+<%= render partial: 'tabs/header' %>
 
 <div class= "project-box">
   <h1> Projeto ainda não foi clonado, por favor espere um momento e recarregue a página </h1> 
-  <div class= "project-info">
-    <h2><%= @project.name %></h2>
-    <h3><%= @project.url %></h3>
-  </div>
+  <%= render partial: 'tabs/project_info', locals:{project: @project} %>
 </div>

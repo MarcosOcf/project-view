@@ -36,7 +36,6 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project.destroy
-    system("rm -rf #{@@PATH}/#{project_name}")
     redirect_to projects_url
   end
 
@@ -65,7 +64,7 @@ class ProjectsController < ApplicationController
   end
 
   def set_project
-    @project = Project.find(params[:id])
+    @project = Project.find_by name: params[:name]
   end
 
   def project_params
