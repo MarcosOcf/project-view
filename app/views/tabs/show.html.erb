@@ -5,13 +5,13 @@
   <%= link_to '+', new_tab_path(@project), id: 'nova-aba'%>
 
   <% @project.tabs.each do |tab| %>
-    <%= link_to tab.path, tab_path(project_id: @project.id.to_s, id: tab.id), class: tab_css_class(tab) %>
+    <%= link_to tab.name, tab_path(project_name: @project.name, tab_name: tab.name), class: tab_css_class(tab) %>
   <% end %>
 </div>
 
 <% if @tab %>
   <div class= "destroy-tab">
-    <%= link_to "X", destroy_tab_url(@project.id, @tab.id), method: :delete, data: {confirm: 'Deseja mesmo excluir?'} %>
+    <%= link_to "X", destroy_tab_url(@project.name, @tab.name), method: :delete, data: {confirm: 'Deseja mesmo excluir?'} %>
   </div>
 
   <div class= "kramdown-render">

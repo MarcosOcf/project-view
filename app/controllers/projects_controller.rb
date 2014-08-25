@@ -41,10 +41,6 @@ class ProjectsController < ApplicationController
 
   private
   
-  def pull
-    #call pull worker
-  end
-  
   def error
     Rails.logger.error "projeto valido: #{@project.valid?}"
     Rails.logger.error @project.errors
@@ -64,7 +60,7 @@ class ProjectsController < ApplicationController
   end
 
   def set_project
-    @project = Project.find params[:id]
+    @project = Project.find_by name: params[:name]
   end
 
   def project_params

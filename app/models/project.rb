@@ -12,9 +12,16 @@ class Project
 
   before_destroy :delete_directory
 
+  @@PATH = "#{Dir.home}/project_view"
+  
+  def to_param
+    name
+  end
+
   private
+
   def delete_directory
-    system("rm -rf #{@@PATH}/#{project_name}")
+    system("rm -rf #{@@PATH}/#{self.name}")
   end
 
 end

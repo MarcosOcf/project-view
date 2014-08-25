@@ -13,10 +13,9 @@ class TabsController < ApplicationController
 
   def create
     @tab = Tab.new tab_params
-    verify_params tab_params
     if tab_exists
       begin
-        @tab = @project.tabs.create(tab_params)
+        @tab = @project.tabs.create(new_tab_params)
         create_html
         redirect_to @project
       rescue => e
@@ -39,8 +38,28 @@ class TabsController < ApplicationController
 
   private
 
+  def new_tab_params
+    params = {}
+    params['name'] = verify_params
+    params['path'] = @tab.path
+    params 
+  end
+
   def verify_params
-    
+    if @tab.name != ''
+      modify @tab.name
+    else
+      cut @tab.path
+    end
+  end
+
+  def cut path
+    name = /\/?[^\/]*\./.match(path).to_s.delete('/').delete('.')
+    @tab.name = modify name
+  end
+
+  def modify name
+    name.downcase.gsub(' ','_').gsub('ç','c')
   end
 
   def create_html
@@ -53,11 +72,11 @@ class TabsController < ApplicationController
   end
 
   def set_project
-    @project = Project.find(params[:project_id])
+    @project = Project.find_by name: params[:project_name]
   end
 
   def set_tab
-    @tab = Tab.find params[:id]
+    @tab = Tab.find_by name: params[:tab_name]
   end
 
   def tab_params

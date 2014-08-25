@@ -7,4 +7,7 @@ class Tab
   
   validates_presence_of :path, :message => "Preencher o campo"
 
+  def to_param
+    path
+  end
 end
