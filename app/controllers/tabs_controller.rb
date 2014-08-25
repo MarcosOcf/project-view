@@ -76,7 +76,7 @@ class TabsController < ApplicationController
   end
 
   def set_tab
-    @tab = Tab.find_by name: params[:tab_name]
+    @tab = @project.tabs.find_by name: params[:tab_name]
   end
 
   def tab_params

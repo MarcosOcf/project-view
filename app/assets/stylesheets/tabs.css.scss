@@ -48,25 +48,16 @@
 
 .destroy-tab{
   float: right;
-  width: 20px;
-  height: 20px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: #999999;
-  border-radius: 10px;
-  background: #244F72;
-  margin-right: 5px;
-  margin-top: 2px;
+  margin-top: -2px;
   position: relative;
   z-index: 11;
 
   a {
     text-decoration: none;
     color: #FFFFFF;
+    background: #185073;
     display: inline-block;
-    padding-left: 5px;
-    padding-right: 7px;
-    padding-bottom: 1px;
+    padding: 5px 10px;
     z-index: 11;
   }
 }

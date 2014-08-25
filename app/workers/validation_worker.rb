@@ -10,7 +10,7 @@ class ValidationWorker
       if folder_exists path, @project.name
         authenticate
         break
-     
+
       else
         sleep_time += 1
         sleep 1

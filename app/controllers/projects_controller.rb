@@ -35,6 +35,7 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
+    @project.tabs.destroy
     @project.destroy
     redirect_to projects_url
   end
