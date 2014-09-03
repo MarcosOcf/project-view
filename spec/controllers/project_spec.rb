@@ -2,7 +2,6 @@ require 'rails_helper'
 
 describe ProjectsController do
 
-
   describe "GET #index" do
     it "should render the index template" do
       get :index
@@ -29,6 +28,10 @@ describe ProjectsController do
   end
 
   describe "POST #create" do
+    subject :project do
+      post :create, project: FactoryGirl.attributes_for(:project)
+    end
+
     context "with valid attributes" do
 
       it "creates a new project" do
@@ -37,16 +40,11 @@ describe ProjectsController do
         }.to change(Project, :count).by(1)
       end
 
-      it "redirect to show" do
-        post :create, project: FactoryGirl.attributes_for(:project)
-        expect(response).to redirect_to(:projects)
+      it "redirect to show" do    
+        subject
+        expect(response).to redirect_to assigns(:project)
       end
 
-      it "call 'clone_repository'" do        
-        #post :create, project: FactoryGirl.attributes_for(:project)
-        #expect(:clone_repository)
-        
-      end
     end
 
     context "with invalid attributes" do
@@ -71,16 +69,39 @@ describe ProjectsController do
 
     it "deletes the project" do
       expect{
-        delete :destroy, id: @project
+        delete :destroy, name: @project
       }.to change(Project, :count).by(-1)
     end
 
     it "redirects to project#index" do
-      delete :destroy, id: @project
+      delete :destroy, name: @project
       expect(response).to redirect_to projects_url
     end
   end
+
+  describe "GET #show" do
+    subject :project do
+      FactoryGirl.create(:project)
+    end
+
+    context "with sucessfull clone" do
+      before do
+        subject.cloned = true
+        subject.can_be_cloned = true
+      end
+      # it "expect render the #show view" do
+      #   # get :show
+      #   # expect(response).to render_template :show
+      # # end
+      # it "expect render the #show_waiting" do
+      # end
+      # it "expect render the #show_error" do
+      # end
+    end
+  end
 end
+
+
 
 
 

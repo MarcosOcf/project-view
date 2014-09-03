@@ -22,7 +22,6 @@ describe Project do
     expect(no_url_project).not_to be_valid
   end
 
-
   it "should require name" do
     no_name_project = Project.new(@attr.merge(:name => nil))
     expect(no_name_project).not_to be_valid

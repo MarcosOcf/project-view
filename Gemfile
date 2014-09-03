@@ -27,6 +27,7 @@ group :development, :test do
   gem "rspec-mocks"
   gem "factory_girl_rails"
   gem "database_cleaner"
+  gem "byebug"
 end
 
 group :development do

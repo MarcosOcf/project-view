@@ -57,7 +57,7 @@ class ProjectsController < ApplicationController
   end
 
   def project_name
-    @project.name.gsub(" ","_")
+    @project.name.gsub(' ',"_")
   end
 
   def set_project

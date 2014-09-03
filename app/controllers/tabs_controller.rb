@@ -1,4 +1,4 @@
-class TabsController < ApplicationController
+ class TabsController < ApplicationController
 
   before_action :set_project, only:[:new, :create, :destroy, :show]
   before_action :set_tab, only:[:show, :destroy]
@@ -19,8 +19,7 @@ class TabsController < ApplicationController
         create_html
         redirect_to @project
       rescue => e
-        Rails.logger.error "tab valido: #{@tab.valid?}"
-        Rails.logger.error @tab.errors
+        #enviar erro para a tela
         redirect_to new_tab_path
       end
     else
