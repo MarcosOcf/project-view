@@ -5,7 +5,7 @@ class CloneWorker
     project = Project.find project_id
     
     begin
-      Git.clone(url, name, path: path)
+      Git.clone(url, name, path: path, depth: 1)
     rescue => e
       Rails.logger.error e.message
       invalidate project
